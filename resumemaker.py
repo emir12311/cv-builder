@@ -241,7 +241,7 @@ class MainWindow(QWidget):
         
         if self.selected_image:
             try:
-                c.drawImage(self.selected_image, 40, 680, width=120, height=150)
+                c.drawImage(self.selected_image, 40, 680, width=120, height=130)
             except:
                 c.setFont("DejaVu", 10)
                 c.drawString(40, 820, "Fotoğraf yüklenemedi.")
@@ -250,7 +250,7 @@ class MainWindow(QWidget):
             c.drawString(40, 820, "Fotoğraf yok.")
 
         c.setFont("DejaVu", 16)
-        c.drawString(220, 800, self.isimtxt.text())
+        c.drawString(220, 793, self.isimtxt.text())
         c.setFont("DejaVu", 10)
         y, x = 780, 220
 
@@ -258,7 +258,7 @@ class MainWindow(QWidget):
             nonlocal y
             c.drawString(x, y, text)
             y -= 18
-
+        y-=7
         gender = "Erkek" if self.cinsradio1.isChecked() else ("Kadın" if self.cinsradio2.isChecked() else "")
         write("Cinsiyet: " + gender)
         write("Şehir: " + self.comboil.currentText())
